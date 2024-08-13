@@ -1,11 +1,12 @@
 import math
 from print_utilities import print_slow
+from countdown import countdown
 
 print_speed = 13
 print_slow("Hello there, want to play a game?", print_speed)
 answer1 = input("'yes' or 'no'?:  ")
 if answer1 == "yes":
-    print_slow("I thought you'd might",print_speed)
+    print_slow("I thought you'd might.",print_speed)
 elif answer1=="no":
     print_slow("Then why are we doing this?", print_speed)
     exit()
@@ -20,6 +21,12 @@ if answer1=="yes":
     
 fuel = eval(input("How many pounds of fuel should we burn?: "))
 #assuming 1 lb of fuel is 1000 joules of kinetic energy
+# So we need to do some separation of responsibilities here. Let's put the fuel to veloctiy calculation in its own
+# function so that we can play around with it separately from the main flow here.
+
+countdown(5)
+
+
 fuel=fuel*10000
 mass = 1000
 #mass in kg
