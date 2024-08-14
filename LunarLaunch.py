@@ -1,6 +1,7 @@
 import math
 from print_utilities import print_slow
 from countdown import countdown
+from render_rocket import renderRocket
 
 print_speed = 13
 print_slow("Hello there, want to play a game?", print_speed)
@@ -13,12 +14,14 @@ elif answer1=="no":
 else:
     print_slow("Can't you follow instructions?", print_speed)
     exit()
-if answer1=="yes":
-    print_slow("We are on the surface of the moon.", print_speed)
-    print_slow("We have a propulsion system that instantly converts all energy into kinetic energy.", print_speed)
-    print_slow("We also have a lunar lander and crew that can withstand infiniate acceloration...", print_speed)
-    print_slow("Your goal is to reach a maximum height without being flung out to space.\n", print_speed)
-    
+
+print_slow("We are on the surface of the moon.", print_speed)
+print_slow("We have a propulsion system that instantly converts all energy into kinetic energy.", print_speed)
+print_slow("We also have a lunar lander and crew that can withstand infiniate acceloration...", print_speed)
+print_slow("Your goal is to reach a maximum height without being flung out to space.\n", print_speed)
+
+renderRocket()    
+
 fuel = eval(input("How many pounds of fuel should we burn?: "))
 #assuming 1 lb of fuel is 1000 joules of kinetic energy
 # So we need to do some separation of responsibilities here. Let's put the fuel to veloctiy calculation in its own
